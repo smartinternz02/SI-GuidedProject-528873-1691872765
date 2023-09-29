@@ -21,7 +21,7 @@ def hello_world():
 def trigger_detection():
 
     
-    model = tf.keras.models.load_model('C:\\Users\\kaasi\\OneDrive\\Desktop\\123\\Missing_1 (1).h5')
+    model = tf.keras.models.load_model('Missing_1 (1).h5')
     
 
     # Get the current location based on IP address
@@ -78,7 +78,7 @@ def trigger_detection():
             location_coordinates = f"Latitude: {latitude}, Longitude: {longitude}"
             # Create and send the SMS
             message = client.messages.create(
-                to="+919390310995",  # Recipient's phone number
+                to="(+xx)xxxxxxxxxx",  # Recipient's phone number
                 from_="+12297158296",  # Your Twilio phone number
                 body="Found the Missing at " + location_coordinates  # SMS text with coordinates
             )
