@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Missing Person Detection</title>
+    <style>
+        body {
+            background-image: url('path-to-your-image.jpg');
+            background-size: cover; /* Adjust as needed */
+            background-color: #f0f0f0; /* Set your desired background color */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            text-align: center;
+            padding: 20px;
+        }
+        #trigger-button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Missing Person Detection</h1>
+        <button id="trigger-button">Find Missing</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#trigger-button").click(function() {
+                $.ajax({
+                    type: "GET",
+                    url: "/trigger_detection",  // This URL should match your route
+                    success: function(response) {
+                        alert(response);  // Display the response from the server
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
